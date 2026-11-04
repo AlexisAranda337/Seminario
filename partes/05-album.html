@@ -1,0 +1,48 @@
+<!-- ==========================================================================
+  ÁLBUM (carrusel de fotos, ver js/05-album.js)
+  Para agregar una foto: añade otro <figure class="slide"> y un botón más
+  dentro de .gdots.
+  ========================================================================== -->
+<section class="agal" id="galeria">
+  <h2>Álbum.</h2>
+  <div class="rail">
+    <figure class="slide">
+      <img
+        decoding="async"
+        src="img/album-1.webp"
+        alt="Ponente durante una sesión del seminario ante estudiantes en el auditorio"
+      />
+    </figure>
+    <figure class="slide">
+      <img
+        decoding="async"
+        src="img/album-2.webp"
+        alt="Ponente junto a la pantalla con el mensaje «Gracias» durante una sesión del seminario"
+      />
+    </figure>
+    <figure class="slide">
+      <img
+        decoding="async"
+        src="img/album-3.webp"
+        alt="Auditorio lleno de estudiantes durante una sesión del seminario"
+      />
+    </figure>
+    <figure class="slide">
+      <img
+        decoding="async"
+        src="img/album-4.webp"
+        alt="Ponente explicando frente a un auditorio con estudiantes"
+      />
+    </figure>
+  </div>
+  <div class="gctl">
+    <button type="button" class="gbtn gprev" aria-label="Foto anterior">&#8249;</button>
+    <div class="gdots">
+      <button type="button" aria-label="Foto 1"></button
+      ><button type="button" aria-label="Foto 2"></button
+      ><button type="button" aria-label="Foto 3"></button
+      ><button type="button" aria-label="Foto 4"></button>
+    </div>
+    <button type="button" class="gbtn gnext" aria-label="Foto siguiente">&#8250;</button>
+  </div>
+</section>

@@ -1,0 +1,170 @@
+<!-- ==========================================================================
+  BARRA SUPERIOR
+  Logo, cuatro botones (Objetivos, Comité Organizador, Cuerpo Académico y
+  Programa) e iconos de redes sociales. Su comportamiento está en js/01-barra-superior.js.
+  ========================================================================== -->
+<nav>
+  <div class="bar">
+    <b class="logo" role="img" aria-label="SMDCV"
+      ><img src="img/logo-smdcv.webp" alt="" width="240" height="240"
+    /></b>
+    <a href="#" role="button" aria-expanded="false" aria-controls="mega" data-t="obj">Objetivos</a
+    ><a href="#" role="button" aria-expanded="false" aria-controls="mega" data-t="com"
+      >Comité Organizador</a
+    ><a href="#" role="button" aria-expanded="false" aria-controls="mega" data-t="cap">Cuerpo Académico</a
+    ><a href="#" role="button" aria-expanded="false" aria-controls="mega" data-t="prog">Programa 2026B</a>
+    <div class="soc">
+      <a
+        href="https://t.me/sm_uaemx"
+        target="_blank"
+        rel="noopener"
+        aria-label="Telegram"
+        title="Telegram"
+        ><svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m22 2-7 20-4-9-9-4Z" />
+          <path d="M22 2 11 13" /></svg></a
+      ><a
+        href="https://www.facebook.com/SMFCUAEMex/"
+        target="_blank"
+        rel="noopener"
+        aria-label="Facebook"
+        title="Facebook"
+        ><svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg></a
+      ><a
+        href="https://whatsapp.com/channel/0029Va5qJEYGJP8HhzkwZl1j"
+        target="_blank"
+        rel="noopener"
+        aria-label="WhatsApp"
+        title="WhatsApp"
+        ><svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+          <g transform="translate(7.2 7.2) scale(.4)" stroke-width="4">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+            />
+          </g></svg></a
+      ><a
+        href="https://www.youtube.com/@sm_uaemex"
+        target="_blank"
+        rel="noopener"
+        aria-label="YouTube"
+        title="YouTube"
+        ><svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"
+          />
+          <path d="m10 15 5-3-5-3z" /></svg
+      ></a>
+    </div>
+  </div>
+  <!-- Menú desplegable: un <section class="panel"> por cada botón de la barra.
+       El botón con data-t="obj" abre el panel con id="obj", y así con los demás.
+       Los nombres con data-view="v-xxxx" abren la ficha de esa persona (ver
+       "FICHAS" al final de este archivo). -->
+  <div class="mega" id="mega">
+    <section class="panel g1" id="obj">
+      <h3 class="full">Objetivos</h3>
+      <p class="obj">
+        Introducir a los estudiantes de licenciatura y posgrado en problemas que requieren, para su
+        solución, de distintas áreas del quehacer científico y tecnológico con impacto social.
+      </p>
+      <p class="obj">
+        Difundir los avances de vanguardia de las distintas áreas de la Biología, Biotecnología, Física y
+        Matemáticas, y fomentar la formación científica e integral de la comunidad universitaria.
+      </p>
+    </section>
+    <section class="panel pc" id="com">
+      <div>
+        <h3>Comité Organizador</h3>
+        <p class="txt">
+          El Seminario Multidisciplinario de Divulgación Científica de Vanguardia se organiza por algunos
+          integrantes de los Cuerpos Académicos de la Facultad de Ciencias de la UAEMéx.
+        </p>
+      </div>
+      <div>
+        <h3>Biotecnología</h3>
+        <p class="nm">Dra. Leticia Buendía González</p>
+        <p class="nm">Dra. Ma. del Carmen Hernández Jaimes</p>
+      </div>
+      <div>
+        <h3>Física</h3>
+        <p class="nm"><a href="#v-valdez" data-view="v-valdez">Dra. Susana Valdez Alvarado</a></p>
+        <p class="nm"><a href="#v-davila" data-view="v-davila">Dr. José Manuel Dávila Dávila</a></p>
+      </div>
+      <div>
+        <h3>Matemáticas</h3>
+        <p class="nm">Dra. Berta Zavala Santana</p>
+        <p class="nm"><a href="#v-cano" data-view="v-cano">Dr. Alfredo Cano Rodríguez</a></p>
+      </div>
+      <div>
+        <h3>Biología</h3>
+        <p class="nm">Dra. Petra Sánchez Nava</p>
+        <p class="nm">Dr. Juan Orozco Villafuerte</p>
+      </div>
+    </section>
+    <section class="panel pc" id="cap">
+      <div>
+        <h3>Cuerpo Académico de Física Matemática y Gravitación</h3>
+        <p class="txt">Cuerpo Académico de la Facultad de Ciencias de la UAEMéx, en formación.</p>
+        <p class="meta"><a href="#v-ca" data-view="v-ca">Ver ficha del Cuerpo Académico ›</a></p>
+      </div>
+      <div>
+        <h3>Integrantes</h3>
+        <p class="nm"><a href="#v-frias" data-view="v-frias">Dra. María Guadalupe Frías Palos</a></p>
+        <p class="nm"><a href="#v-cano" data-view="v-cano">Dr. Alfredo Cano Rodríguez</a></p>
+      </div>
+      <div>
+        <h3>&nbsp;</h3>
+        <p class="nm"><a href="#v-davila" data-view="v-davila">Dr. José Manuel Dávila Dávila</a></p>
+        <p class="nm"><a href="#v-valdez" data-view="v-valdez">Dra. Susana Valdez Alvarado</a></p>
+      </div>
+    </section>
+    <!-- Panel «Programa»: descarga del programa del semestre en imagen (carpeta descargas/) -->
+    <section class="panel" id="prog">
+      <div>
+        <h3>Programa</h3>
+        <p class="txt">
+          Puedes descargar el programa de conferencias del semestre 2026B desde el siguiente enlace:
+        </p>
+        <a class="big" href="descargas/Programa-2026B.jpg" download="Programa-2026B.jpg"
+          >Programa 2026B ›</a
+        >
+      </div>
+    </section>
+  </div>
+</nav>
+<!-- Fondo oscuro detrás del menú; al hacer clic en él, el menú se cierra -->
+<div class="scrim"></div>

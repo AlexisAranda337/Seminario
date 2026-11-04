@@ -1,0 +1,102 @@
+<!doctype html>
+<!--
+  ============================================================================
+  Seminario Multidisciplinario de Divulgación Científica de Vanguardia
+  Facultad de Ciencias · Universidad Autónoma del Estado de México (UAEMéx)
+  ----------------------------------------------------------------------------
+  Sitio estático de una sola página. Estructura de la carpeta:
+
+    index.html            página principal: llama a cada sección como si fuera una función
+    partes/               una sección por archivo (aquí se edita el contenido)
+    css/estilos.css       todos los estilos
+    js/                   comportamiento; el número indica la sección (00 = toda la página)
+    js/00-cargador.js     carga las partes de partes/ dentro de esta página
+    js/03-programa-datos.js   títulos y resúmenes de las conferencias
+    img/                  imágenes del sitio
+    descargas/            archivos para descargar (programa del semestre)
+
+  Secciones de la página, en orden (cada una es un archivo de partes/):
+    1. Barra superior y menú desplegable ......... partes/01-barra-superior.html
+    2. Portada (título, ilustración y cuenta regresiva)  partes/02-portada.html
+    3. Programa del semestre ..................... partes/03-programa.html
+    4. Introducción y antecedentes .............. partes/04-introduccion.html
+    5. Álbum de fotos ............................ partes/05-album.html
+    6. Pie de página ............................ partes/06-pie-de-pagina.html
+    7. Fichas de información (ventanas emergentes)  partes/07-fichas.html
+
+  OJO: la página debe abrirse desde un servidor (ver README.md).
+  ============================================================================
+-->
+<html lang="es" data-pal="pop" data-style="formal" class="cargando">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#2F5153" />
+    <meta
+      name="description"
+      content="Seminario Multidisciplinario de Divulgación Científica de Vanguardia, Facultad de Ciencias, UAEMéx. Programa de conferencias 2026B."
+    />
+    <title>Seminario Multidisciplinario de Divulgación Científica de Vanguardia</title>
+    <link rel="icon" type="image/webp" href="img/logo-smdcv.webp" />
+
+    <!-- Tipografías de Google Fonts (requieren conexión a internet) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Oculta la página unos instantes, hasta que 00-cargador.js termina de montar las secciones -->
+    <style>
+      html.cargando body {
+        visibility: hidden;
+      }
+    </style>
+    <noscript>
+      <style>
+        html.cargando body {
+          visibility: visible;
+        }
+      </style>
+    </noscript>
+
+    <!-- Estilos del sitio -->
+    <link rel="stylesheet" href="css/estilos.css" />
+
+    <!-- Escala según el ancho de pantalla: va aquí (sin defer) para evitar saltos al cargar -->
+    <script src="js/00-escala.js"></script>
+  </head>
+  <body>
+    <div data-parte="partes/01-barra-superior.html"></div>
+    <div data-parte="partes/02-portada.html"></div>
+    <div data-parte="partes/03-programa.html"></div>
+    <div data-parte="partes/04-introduccion.html"></div>
+    <div data-parte="partes/05-album.html"></div>
+    <div data-parte="partes/06-pie-de-pagina.html"></div>
+    <div data-parte="partes/07-fichas.html"></div>
+
+    <noscript>Esta página necesita JavaScript activado para mostrarse.</noscript>
+
+    <!-- ======================================================================
+         CARGA DE LA PÁGINA
+         1) 00-cargador.js reemplaza cada <div data-parte="..."> de arriba por el
+            contenido de su archivo.
+         2) Después carga, EN ESTE ORDEN, los scripts que usan esas secciones.
+            El orden importa: 01-barra-superior.js crea window.SMDCV que usa 07-fichas.js, y
+            03-programa-datos.js debe ir antes que 03-programa-resumenes.js.
+         ====================================================================== -->
+    <script src="js/00-cargador.js"></script>
+    <script>
+      cargarPagina([
+        "js/01-barra-superior.js",
+        "js/07-fichas.js",
+        "js/00-animaciones.js",
+        "js/05-album.js",
+        "js/02-portada-cuenta-regresiva.js",
+        "js/03-programa-datos.js",
+        "js/03-programa-resumenes.js",
+      ]);
+    </script>
+  </body>
+</html>

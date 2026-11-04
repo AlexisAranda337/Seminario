@@ -1,0 +1,231 @@
+<!-- ==========================================================================
+  PORTADA
+  Título, botones institucionales, ilustración animada y tarjeta con la
+  cuenta regresiva a la próxima conferencia (js/02-portada-cuenta-regresiva.js).
+  ========================================================================== -->
+<main class="stage">
+  <header class="top">
+    <h1>
+      <span class="hw w1">Seminario</span><span class="hw w2">Multidisciplinario</span
+      ><span class="hw w3">de Divulgación Científica de Vanguardia</span>
+    </h1>
+    <div class="tag">
+      <a class="inst" href="https://ciencias.uaemex.mx/" target="_blank" rel="noopener"
+        >Facultad de Ciencias</a
+      ><a class="inst" href="https://www.uaemex.mx" target="_blank" rel="noopener">UAEMéx</a>
+    </div>
+    <img
+      class="lg lg-l"
+      src="img/logo-facultad-ciencias.webp"
+      alt=""
+      aria-hidden="true"
+      width="304"
+      height="300"
+      decoding="async"
+    /><img
+      class="lg lg-r"
+      src="img/escudo-uaemex.webp"
+      alt=""
+      aria-hidden="true"
+      width="324"
+      height="300"
+      decoding="async"
+    />
+  </header>
+  <!-- Ilustración animada (matraz que llena una taza). Es un SVG en línea: las
+       animaciones están en css/estilos.css (.flask, .flow, .drop, .steam...). -->
+  <div class="art">
+    <svg
+      viewBox="-90 130 1230 890"
+      role="img"
+      aria-label="Ilustración animada: un matraz vierte líquido en una taza de café"
+    >
+      <defs>
+        <linearGradient id="rg1" gradientUnits="userSpaceOnUse" x1="-60" x2="1140">
+          <stop offset="0" style="stop-color: var(--accent)" />
+          <stop offset=".5" style="stop-color: var(--crema)" />
+          <stop offset="1" style="stop-color: var(--glass)" />
+        </linearGradient>
+        <linearGradient id="rg2" gradientUnits="userSpaceOnUse" x1="1140" x2="-60">
+          <stop offset="0" style="stop-color: var(--glass)" />
+          <stop offset="1" style="stop-color: var(--accent)" />
+        </linearGradient>
+        <filter id="bl" x="-20%" y="-50%" width="140%" height="200%">
+          <feGaussianBlur stdDeviation="9" />
+        </filter>
+        <linearGradient id="ink" gradientUnits="userSpaceOnUse" x1="100" y1="150" x2="950" y2="1000">
+          <stop offset="0" style="stop-color: var(--ink)" />
+          <stop offset="1" style="stop-color: var(--ink2)" />
+        </linearGradient>
+        <linearGradient id="hot" gradientUnits="userSpaceOnUse" x1="100" y1="150" x2="950" y2="1000">
+          <stop offset="0" style="stop-color: var(--crema)" />
+          <stop offset=".5" style="stop-color: var(--accent)" />
+          <stop offset="1" style="stop-color: var(--cup)" />
+        </linearGradient>
+        <linearGradient id="gl" x1="0" x2="1">
+          <stop offset="0" style="stop-color: var(--glass)" stop-opacity=".45" />
+          <stop offset="1" style="stop-color: var(--glass)" stop-opacity=".08" />
+        </linearGradient>
+        <linearGradient id="cb" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" style="stop-color: var(--cup)" stop-opacity=".75" />
+          <stop offset="1" style="stop-color: var(--cup)" stop-opacity=".12" />
+        </linearGradient>
+        <radialGradient id="cf" cx=".5" cy=".45" r=".6">
+          <stop offset="0" style="stop-color: var(--coffee-hi)" />
+          <stop offset="1" style="stop-color: var(--coffee-lo)" />
+        </radialGradient>
+        <radialGradient id="gw">
+          <stop offset="0" style="stop-color: var(--accent)" stop-opacity=".4" />
+          <stop offset="1" style="stop-color: var(--accent)" stop-opacity="0" />
+        </radialGradient>
+        <clipPath id="surf"><ellipse cx="646" cy="642" rx="228" ry="54" /></clipPath>
+        <mask id="mf" maskUnits="userSpaceOnUse" x="50" y="150" width="650" height="455">
+          <image
+            href="img/ilustracion-matraz.webp"
+            x="50"
+            y="150"
+            width="650"
+            height="455"
+            preserveAspectRatio="none"
+          />
+        </mask>
+        <mask id="mc" maskUnits="userSpaceOnUse" x="280" y="520" width="735" height="480">
+          <image
+            href="img/ilustracion-taza.webp"
+            x="280"
+            y="520"
+            width="735"
+            height="480"
+            preserveAspectRatio="none"
+          />
+        </mask>
+      </defs>
+      <ellipse class="halo" cx="646" cy="760" rx="520" ry="250" fill="url(#gw)" />
+      <g transform="rotate(-7 540 640)">
+        <ellipse
+          class="ring"
+          cx="540"
+          cy="640"
+          rx="560"
+          ry="210"
+          stroke="url(#rg1)"
+          stroke-width="12"
+          filter="url(#bl)"
+          opacity=".7"
+        />
+        <ellipse class="ring" cx="540" cy="640" rx="560" ry="210" stroke="url(#rg1)" stroke-width="3.5" />
+      </g>
+      <g transform="rotate(6 540 650)">
+        <ellipse
+          class="ring r2"
+          cx="540"
+          cy="650"
+          rx="500"
+          ry="165"
+          stroke="url(#rg2)"
+          stroke-width="9"
+          filter="url(#bl)"
+          opacity=".55"
+        />
+        <ellipse
+          class="ring r2"
+          cx="540"
+          cy="650"
+          rx="500"
+          ry="165"
+          stroke="url(#rg2)"
+          stroke-width="2.4"
+        />
+      </g>
+      <g class="fh fh1">
+        <g class="flask">
+          <path
+            d="M105 215Q120 175 185 168L405 318H615V425L405 440L235 580Q150 590 110 530Q80 380 105 215Z"
+            fill="url(#gl)"
+          />
+          <circle class="bub" cx="180" cy="330" r="6" />
+          <circle class="bub" cx="230" cy="410" r="4" style="animation-delay: 1.2s" />
+          <circle class="bub" cx="150" cy="440" r="5" style="animation-delay: 2.2s" />
+          <rect class="ink" x="50" y="150" width="650" height="455" fill="url(#ink)" mask="url(#mf)" />
+        </g>
+      </g>
+      <g class="str">
+        <path
+          d="M645 428C645 468 641 498 643 528"
+          fill="none"
+          stroke="var(--cup)"
+          stroke-width="5"
+          stroke-linecap="round"
+        />
+        <path
+          class="flow"
+          d="M645 428C645 468 641 498 643 528"
+          fill="none"
+          stroke="var(--crema)"
+          stroke-width="1.5"
+        />
+      </g>
+      <circle class="drop" cx="644" cy="436" r="3.2" />
+      <circle class="drop" cx="644" cy="436" r="2.4" style="animation-delay: 0.5s" />
+      <circle class="drop" cx="644" cy="436" r="2.8" style="animation-delay: 1s" />
+      <g class="fh fh2">
+        <rect x="880" y="640" width="130" height="190" fill="transparent" />
+        <ellipse cx="645" cy="905" rx="352" ry="82" fill="var(--cup)" fill-opacity=".14" />
+        <path d="M400 640C405 780 480 870 520 880H770C810 870 880 780 884 640Z" fill="url(#cb)" />
+        <ellipse cx="641" cy="640" rx="242" ry="58" fill="var(--cup)" fill-opacity=".5" />
+        <ellipse cx="646" cy="642" rx="228" ry="54" fill="url(#cf)" />
+        <rect class="ink" x="280" y="520" width="735" height="480" fill="url(#ink)" mask="url(#mc)" />
+        <g clip-path="url(#surf)">
+          <ellipse class="rip" cx="646" cy="626" rx="230" ry="57" />
+          <ellipse class="rip" cx="646" cy="626" rx="230" ry="57" style="animation-delay: 1.3s" />
+          <ellipse class="rip" cx="646" cy="626" rx="230" ry="57" style="animation-delay: 2.6s" />
+        </g>
+        <g transform="translate(720,590)">
+          <path class="steam" d="M0 0C14-22-14-44 0-66S14-110 0-132" />
+        </g>
+        <g transform="translate(775,592)">
+          <path class="steam" style="animation-delay: 1.5s" d="M0 0C14-22-14-44 0-66S14-110 0-132" />
+        </g>
+        <g transform="translate(830,590)">
+          <path class="steam" style="animation-delay: 3s" d="M0 0C14-22-14-44 0-66S14-110 0-132" />
+        </g>
+      </g>
+    </svg>
+  </div>
+  <!-- Tarjeta «Próxima conferencia». Los números (--) y el nombre los rellena
+       js/02-portada-cuenta-regresiva.js leyendo el programa de más abajo. -->
+  <aside class="nxt" id="nxt" aria-live="polite">
+    <p class="nxt-k">Próxima conferencia</p>
+    <div class="nxt-t" id="nxt-t">
+      <div><b id="nd">--</b><span>días</span></div>
+      <div><b id="nh">--</b><span>horas</span></div>
+      <div><b id="nm">--</b><span>min</span></div>
+      <div><b id="ns">--</b><span>seg</span></div>
+    </div>
+    <div class="nxt-w">
+      <img
+        class="lg-nxt"
+        src="img/logo-en-union.webp"
+        alt=""
+        aria-hidden="true"
+        width="273"
+        height="360"
+        decoding="async"
+      />
+      <p class="nxt-n" id="nxt-n"></p>
+      <p class="nxt-i" id="nxt-i"></p>
+      <p class="nxt-d" id="nxt-d"></p>
+    </div>
+  </aside>
+  <a class="cue" href="#programa" aria-label="Ver más"
+    ><svg viewBox="0 0 24 24">
+      <path
+        d="M5 9l7 7 7-7"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      /></svg
+  ></a>
+</main>
