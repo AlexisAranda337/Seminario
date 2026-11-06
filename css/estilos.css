@@ -2096,7 +2096,7 @@ html[data-style="formal"][data-pal="pop"] .dark {
   color: #e8f5f3;
 }
 html[data-style="formal"][data-pal="pop"] .dark strong {
-  color: #c19758;
+  color: #c16b58;
 }
 
 /* --------------------------------------------------------------------------
@@ -2743,22 +2743,31 @@ html[data-style="formal"][data-pal="pop"] .prog .badge,
 html[data-style="formal"][data-pal="pop"] .when {
   color: #c19758;
 }
-html[data-style="formal"][data-pal="pop"] .tiles .tile:nth-child(1),
-html[data-style="formal"][data-pal="pop"] .tiles .tile:nth-child(4) {
+html[data-style="formal"][data-pal="pop"] .tiles .tile:nth-child(1){
   background: #e8c88a;
   color: #2f5153;
   border-color: #e8c88a;
 }
-html[data-style="formal"][data-pal="pop"] .tiles .tile:nth-child(2),
-html[data-style="formal"][data-pal="pop"] .tiles .tile:nth-child(5) {
-  background: #fff;
-  color: #2f5153;
-  border-color: #fff;
-}
-html[data-style="formal"][data-pal="pop"] .tiles .tile:nth-child(3) {
+html[data-style="formal"][data-pal="pop"] .tiles .tile:nth-child(2){
   background: #8fa897;
   color: #1a1a1a;
   border-color: #8fa897;
+  
+}
+html[data-style="formal"][data-pal="pop"] .tiles .tile:nth-child(3) {
+  background: #fff;
+  color: #2f5153;
+  border-color: #dbd9d9;
+}
+html[data-style="formal"][data-pal="pop"] .tiles .tile:nth-child(4) {
+  background: #0a6258;
+  color: #ffffff;
+  border-color: #0a6258;
+}
+html[data-style="formal"][data-pal="pop"] .tiles .tile:nth-child(5) {
+  background: #c19758;
+  color: #1f2a2b;
+  border-color: #c19758;
 }
 html[data-style="formal"][data-pal="pop"] :is(h2, h3, .sup .lead) .t2,
 html[data-style="formal"][data-pal="pop"] .prog h2 .t2,
@@ -3065,9 +3074,11 @@ html[data-style="formal"][data-pal="pop"] .prog {
 html[data-style="formal"][data-pal="pop"] .prog .mcard {
   border: 0;
 }
-html[data-style="formal"][data-pal="pop"] .prog .mcard:nth-child(1),
-html[data-style="formal"][data-pal="pop"] .prog .mcard:nth-child(4) {
+html[data-style="formal"][data-pal="pop"] .prog .mcard:nth-child(1) {
   background: #e8f5f3;
+}
+html[data-style="formal"][data-pal="pop"] .prog .mcard:nth-child(4) {
+  background: #f7e8c3;
 }
 html[data-style="formal"][data-pal="pop"] .prog .mcard:nth-child(2) {
   background: #e8c88a;
@@ -5095,11 +5106,11 @@ html[data-style="formal"][data-pal="pop"] .stage .nxt {
   border-top: 1px solid color-mix(in srgb, #c19758 45%, transparent);
 }
 .sep-l::before {
-  left: calc(var(--h) * 0.6);
+  left: 0;
   right: 0;
 }
 .sep-r::before {
-  right: calc(var(--h) * 0.6);
+  right: 0;
   left: 0;
 }
 .sep img {
@@ -5118,4 +5129,32 @@ html[data-style="formal"][data-pal="pop"] .stage .nxt {
 html[data-style="formal"][data-pal="pop"] .info,
 html[data-style="formal"][data-pal="pop"] .agal {
   border-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   58. Logotipos institucionales del pie
+   -------------------------------------------------------------------------- */
+
+
+
+.footer-marcas{
+  max-width:1040px;
+  margin:50px auto 0;
+
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.footer-linea{
+  flex:1;
+  margin:0 px;
+  border-top:1px solid #a3a3a3;
+}
+
+.footer-logo{
+  width:auto;
+  height:70px;
+  object-fit:contain;
+  flex-shrink:0;
 }
