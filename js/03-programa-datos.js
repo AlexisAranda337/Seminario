@@ -91,7 +91,9 @@ window.CONFERENCIAS = {
 
   "2026-11-20": {
     titulo: `Fronteras en Física Hadrónica`,
-    resumen: "", // (el Excel de origen no incluye resumen para esta conferencia)
+    resumen: `La física hadrónica busca comprender la estructura y las propiedades de los hadrones, partículas compuestas por quarks y gluones que interactúan mediante la fuerza fuerte, descrita por la cromodinámica cuántica (QCD). A pesar de los importantes avances teóricos y experimentales, comprender cómo emergen las propiedades de los hadrones a partir de sus constituyentes fundamentales continúa siendo uno de los grandes desafíos de la física contemporánea.
+    En esta charla se presentarán algunos de los principales problemas abiertos y avances recientes en física hadrónica, con especial énfasis en el régimen no perturbativo de QCD. Se discutirán herramientas teóricas como las ecuaciones de Schwinger–Dyson y Bethe–Salpeter, así como modelos efectivos que permiten estudiar la estructura interna de mesones y bariones. Asimismo, se abordarán algunas propiedades de estos sistemas, incluyendo sus masas, factores de forma y comportamiento a temperatura finita, destacando su importancia para comprender fenómenos como la generación dinámica de masa y la restauración de la simetría quiral.
+    Finalmente, se discutirán algunas perspectivas y desafíos actuales de esta área de investigación, así como su relación con los programas experimentales dedicados a explorar la estructura de la materia hadrónica.` , 
   },
 
 };
