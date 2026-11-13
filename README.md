@@ -28,6 +28,11 @@ js/                         Los números indican a qué sección pertenece cada 
   05-album.js               Carrusel de fotos
   07-fichas.js              Ventanas de información de cada persona
 img/                        Logotipos, ilustración, flores y fotos del álbum
+datos/
+  Seminario-datos.xlsx      ★ EXCEL QUE EDITAN LOS PROFESORES (conferencias, álbum, ajustes)
+actualizar_sitio.py         Pasa el Excel a la página (ver «Actualizar desde Excel»)
+ACTUALIZAR.bat              Lo mismo con doble clic en Windows
+img/album/                  Fotos del álbum
 descargas/
   Programa-2026B.jpg        Archivo que se descarga desde el menú "Programa"
 ```
@@ -77,7 +82,41 @@ Las tipografías se cargan desde Google Fonts, por lo que el visitante necesita
 conexión a internet para verlas exactamente igual; sin ella el sitio se ve con
 una tipografía del sistema.
 
+## Actualizar el programa y el álbum desde Excel
+
+Los profesores solo trabajan en **`datos/Seminario-datos.xlsx`**, que tiene cuatro hojas:
+
+| Hoja | Qué contiene |
+|---|---|
+| Instrucciones | Guía breve para quien edite el Excel |
+| Conferencias | Una fila por conferencia: fecha, ponente, institución, título, resumen |
+| Álbum | Una fila por foto: nombre del archivo (en `img/album/`) y descripción |
+| Ajustes | Semestre, lugar, horario, hora de inicio y cartel descargable |
+
+Pasos para publicar un cambio:
+
+1. Editar y **guardar y cerrar** el Excel (fotos nuevas: copiarlas a `img/album/`).
+2. Ejecutar `actualizar_sitio.py` (Windows: doble clic en `ACTUALIZAR.bat`; en otros
+   sistemas `python3 actualizar_sitio.py`). Con `--revisar` solo valida el Excel.
+3. Recargar la página (Ctrl+F5) o, si está en un servidor, subir los archivos modificados.
+
+El programa usa solo Python 3.8+ (sin instalar nada). Revisa el Excel antes de tocar la
+página: si hay un error (fecha inválida, foto inexistente, fecha repetida...) lo indica y
+**no modifica nada**. Si está instalada la librería Pillow (`pip install pillow`), las
+fotos grandes o en JPG/PNG se convierten solas a WebP de 1600 px (carpeta `img/album/web/`).
+
+Archivos que escribe el programa (no editarlos a mano, se sobrescriben):
+`partes/03-programa.html`, `js/03-programa-datos.js`, `partes/05-album.html`, y el nombre del
+semestre / año / hora / cartel en `index.html`, `partes/01-barra-superior.html`,
+`partes/06-pie-de-pagina.html` y `js/02-portada-cuenta-regresiva.js`.
+
+Cuando se agregue Django, este mismo Excel puede importarse a la base de datos (cada hoja
+es una tabla) y el formulario de administración sustituirá al Excel.
+
 ## Tareas frecuentes
+
+> Las tres primeras (conferencias, semestre y fotos) ahora se hacen desde el Excel; las instrucciones
+> manuales de abajo quedan solo como referencia.
 
 **Cambiar el resumen o el título de una conferencia**
 Edita `js/03-programa-datos.js`. Cada conferencia se identifica por su fecha
